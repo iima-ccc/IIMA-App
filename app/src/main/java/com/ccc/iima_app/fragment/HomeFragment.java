@@ -4,14 +4,18 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
+
 
 import com.ccc.navigationdrawer.R;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,14 @@ import com.ccc.navigationdrawer.R;
  */
 public class HomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
+
+
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> listDataHeader;
+    HashMap<String, List<String>> listDataChild;
+
+    private FragmentTabHost tabHost;
 
     private OnFragmentInteractionListener mListener;
     //WebView myWebView;
@@ -45,17 +57,19 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rView=(View) inflater.inflate(R.layout.fragment_home, container, false);
+
+//        View rView=(View) inflater.inflate(R.layout.fragment_home, container, false);
         //myWebView = (WebView) rView.findViewById(R.id.webview);
+        tabHost = new FragmentTabHost(getActivity());
+        tabHost.setup(getActivity(), getChildFragmentManager(), R.layout.fragment_home);
+        Bundle arg1 = new Bundle();
+        arg1.putInt("Arg for Frag1", 1);
+        tabHost.addTab(tabHost.newTabSpec("All").setIndicator("All"), MessFragment.class, arg1);
 
-
-//        myWebView.loadUrl("https://www.google.com");
-//        WebSettings webSettings = myWebView.getSettings();
-//        webSettings.setJavaScriptEnabled(true);
-//        myWebView.setWebViewClient(new WebViewClient());
-//        //return inflater.inflate(R.layout.fragment_home, container, false);
-          return rView;
+        Bundle arg2 = new Bundle();
+        arg2.putInt("Arg for Frag2", 2);
+        tabHost.addTab(tabHost.newTabSpec("Upcoming").setIndicator("Upcoming"), MessFragment.class, arg2);
+        return tabHost;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

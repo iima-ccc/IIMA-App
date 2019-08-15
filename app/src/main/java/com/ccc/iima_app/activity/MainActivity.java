@@ -257,12 +257,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_forum:
                         // launch new intent instead of loading fragment
-                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
+                        startActivity(new Intent(MainActivity.this, ForumActivity.class));
                         drawer.closeDrawers();
                         return true;
                     case R.id.nav_about_us:
                         // launch new intent instead of loading fragment
-                        startActivity(new Intent(MainActivity.this, PrivacyPolicyActivity.class));
+                        startActivity(new Intent(MainActivity.this, AboutUsActivity.class));
                         drawer.closeDrawers();
                         return true;
                     default:

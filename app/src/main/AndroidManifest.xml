@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -30,8 +30,8 @@
             android:name="com.ccc.iima_app.activity.AboutUsActivity"
             android:label="@string/activity_title_about_us" />
         <activity
-            android:name="com.ccc.iima_app.activity.PrivacyPolicyActivity"
-            android:label="@string/activity_title_privacy_policy" />
+            android:name="com.ccc.iima_app.activity.ForumActivity"
+            android:label="@string/activity_title_forum" />
     </application>
 
 </manifest>
