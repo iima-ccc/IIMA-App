@@ -4,17 +4,27 @@
     android:layout_height="match_parent"
     tools:context="com.ccc.iima_app.activity.MainActivity">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="162dp"
-            android:layout_height="142dp"
-            android:layout_x="0dp"
-            android:layout_y="0dp"
-            android:text="Mess"
-            android:textSize="36sp"
-            tools:layout_editor_absoluteX="195dp"
-            tools:layout_editor_absoluteY="214dp" />
+        <Button
+            android:id="@+id/dateButton"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:layout_marginLeft="15dp"
+            style="?android:attr/spinnerStyle" />
 
+        <ListView
+            android:id="@+id/simpleListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:focusable="true"
+            android:divider="#fff"
+            android:dividerHeight="15dp"
+            android:layout_margin="15dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:listSelector="#600"
+            android:layout_below="@+id/dateButton"/>
 </RelativeLayout>
 
 
